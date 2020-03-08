@@ -4,10 +4,10 @@ Password Generator - OOP
 
 Requirements:
 
-NodeJS
-Inquirer
-ES6 JS Classes
-Character options: Special Characters (!,@,$,%), Numbers, Lowercase letters, Uppercase letters.
+- NodeJS
+- Inquirer
+- ES6 JS Classes
+- Character options: Special Characters (!,@,$,%), Numbers, Lowercase letters, Uppercase letters.
 
 
 Instructions:
