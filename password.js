@@ -61,14 +61,15 @@ class Password {
         if (types.includes("symbols")){
             choicesOptions+=symbols;
         }
-        for (let i=0; i<passwordLength; i++){
-            password += choiceOptions[Math.floor(Math.random() * (choicesOptions.length))];
+        for (let i=0; i < passwordLength; i++){
+            password += choiceOptions[Math.floor(Math.random() * (choiceOptions.length))];
         }
         this.generatedPassword = password;
     }
 }
 inquirer
-.prompt(questions).then((data) =>{
+.prompt(questions).then((data) => {
     const {passwordLength, choices} = data;
-    const password = generatedPassword(passwordLength, choices.map((word) => word[0]));
+    const password = new Password(passwordLength, choices.map((word) => word[0]));
+    console.log(`Your new password is: ${password.generatedPassword}`);
 });
