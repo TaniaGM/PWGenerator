@@ -1,11 +1,8 @@
 const inquirer = require("inquirer");
 
-//const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-//const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-//const symbols = "!@#$%^&*()_+{}|:<>?-=[]\;,./";
 const symbols = ["!", "@", "#", "$", "%", "^"];
 
 const questions = [{
@@ -52,50 +49,33 @@ class Password {
         let password = [];
         let choiceOptions = [];
         this.p = p;
-        //if (types.includes("upperCase")){
         if (types.includes("U")) {
-            //choiceOptions+=upperCase;
             choiceOptions = choiceOptions.concat(upperCase);
         }
-        //if (types.includes("lowerCase")){
         if (types.includes("L")) {
-            //choiceOptions+=lowerCase;
             choiceOptions = choiceOptions.concat(lowerCase);
         }
-        //if (types.includes("numbers")){
         if (types.includes("N")) {
-            //choiceOptions+=numbers;
             choiceOptions = choiceOptions.concat(numbers);
         }
-        //if (types.includes("symbols")){
         if (types.includes("S")) {
-            //choicesOptions+=symbols;
             choiceOptions = choiceOptions.concat(symbols);
         }
-        console.log(choiceOptions);
         for (let i = 0; i < passwordLength; i++) {
             var temp = Math.floor(Math.random() * (choiceOptions.length));
-            //console.log(choiceOptions[temp]);
             password.push(choiceOptions[temp]);
-            //console.log("Password For Loop: "+password)
         }
         const pwd = password.join("");
         this.p = pwd;
-        //console.log("PWD: " + pwd);
-        //console.log("Password constructor: "+password);
-        //this.generatedPassword = password;
         return p;
     }
 }
 inquirer
     .prompt(questions).then((data) => {
-        //console.log("Data: "+JSON.stringify(data));
-        //const {passwordLength, choices} = data;
+
         const passwordLength = data.passwordLength;
         const choices = data.choices;
         let p = "";
         const password = new Password(passwordLength, choices.map((word) => word[0]), p);
-        console.log("Password Obj: " + JSON.stringify(password));
         console.log(`Your new password is: ${password.p}`);
-        //console.log(`Your new password is: ${password}`);
     });
