@@ -17,3 +17,5 @@ Your application should prompt a user for their desired password length and char
 Your CLI should not have procedural code, or code that is not a method on a class.
 
 Used previous assignment, "https://github.com/TaniaGM/Homework3" to convert into a jnode CLI to run in terminal to generate a password based on the same inputs (Upper, Lower, Numbers, Special Characters).
+
+Find a video here:  [https://drive.google.com/file/d/1ldH22UBiO7Q3_xQXrndLxCEgfcsCEZHd/view](url)
